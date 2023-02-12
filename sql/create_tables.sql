@@ -3,7 +3,8 @@
 -- in this table we store names of platforms types. E.g. PC, console, mobile
 CREATE TABLE platform_types (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    UNIQUE(name)
 );
 
 -- in this table we store names of platforms. E.g. PC, PlayStation, Xbox, IOS etc, and which platform type they have.
@@ -14,13 +15,15 @@ CREATE TABLE platforms (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     platform_type_id INT NOT NULL,
-    FOREIGN KEY (platform_type_id) REFERENCES platform_types(id)
+    FOREIGN KEY (platform_type_id) REFERENCES platform_types(id),
+    UNIQUE(name)
 );
 
 -- in this table we store names of vendors. E.g. steam, gamestop
 CREATE TABLE vendors (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    UNIQUE(name)
 );
 
 -- in this table we store information about existing distribution service, e.g. Steam, PlayStation, Xbox, Apple
@@ -28,7 +31,8 @@ CREATE TABLE vendors (
 -- for example, Steam is available both on PC and on the SteamDeck
 CREATE TABLE distribution_services (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	name VARCHAR(255) NOT NULL
+	name VARCHAR(255) NOT NULL,
+    UNIQUE(name)
 );
 
 -- In this table we store information about what distribution services is available on which platform.
@@ -48,13 +52,15 @@ CREATE TABLE distribution_services_platform (
 -- in this table we store names of the different categories. E.g. RPG, Strategy, FPS
 CREATE TABLE game_categories (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    UNIQUE(name)
 );
 
 -- in this table we store names of games. E.g. Skyrim
 CREATE TABLE games (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL
+    name VARCHAR(255) NOT NULL,
+    UNIQUE(name)
 );
 
 -- in this table we store information about what categories games are. This is because game to game category is a many-to-many relationship
@@ -126,7 +132,7 @@ CREATE TABLE IF NOT EXISTS distribution_service_accounts (
     user_id INT NOT NULL,
     distribution_service_id INT NOT NULL,
     user_name VARCHAR(255) NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (distribution_service_id) REFERENCES distribution_services(id),
     CONSTRAINT unique_dp_acc UNIQUE(user_name, distribution_service_id)
 );
