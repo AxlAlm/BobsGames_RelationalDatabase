@@ -161,7 +161,7 @@ CREATE TABLE purchases (
 	FOREIGN KEY (vendor_id) REFERENCES vendors(id)
 );
 
-CREATE TABLE game_key_to_purchase (
+CREATE TABLE game_key_purchase (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	game_key_id INT NOT NULL,
 	purchase_id INT NOT NULL,
@@ -170,7 +170,7 @@ CREATE TABLE game_key_to_purchase (
 );
 
 
-CREATE TABLE user_to_game_key (
+CREATE TABLE user_game_key (
 	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	user_id INT NOT NULL,
 	game_key_id INT NOT NULL,
