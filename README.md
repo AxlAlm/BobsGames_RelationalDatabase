@@ -2,11 +2,11 @@
 
 This repo contains an example of how a relational database database with the propose of **insights and analytics** can look for a game developer.
 
-# So what does BobsGames do and what data do they get?
+# So what does BobsGames do?
 
-Lets outline a bit what BobGames do, how they sell their games and what information they have/can get.
+Lets define what BobGames do and how their business works!
 
-Please note that all this might not accurately reflect the complexity of a real game developer :D This is all made to simple.
+(Please note that all this might not accurately reflect the complexity of a real game developer :D This is all made to be simple.)
 
 - BobsGames only business is to make and sell games
 - BobsGames do not have their own shop but sell all their games via 3rd parties such as Steam, PlayStation Store and GameStop and so on. We will refer to these as **vendors**.
@@ -14,25 +14,13 @@ Please note that all this might not accurately reflect the complexity of a real 
 - BobsGames's games are mostly played via 3rd party distribution services such as Steam, PlayStation, Epic Games, Apple (iOS) and so on. We will refer to these as **distribution services**. These also often serve as vendors. Few BobGames fans buy physical copies and play without connecting to a distribution service.
 - BobsGames makes games for multiple platforms, e.g. PC, Xbox, etc
 - BobsGames make games in many different categories, e.g. RPG, FPS, Strategy etc
-- the company can get information from the **distribution services**. This information is the following (this might be very far form reality!):
-  - name and address of user that own BobsGames's games
-  - information when user play BobsGames's games
 
 For simplicity BobsGames does not have its own users, i.e. you cannot have a BobsGames account.
 
-## Lets take a look at some questions that we might be interested in getting answers for!
-
-- How many people play our games?
-- what's the most popular game?
-- what's the most popular platform?
-- what's the most popular game category?
-- what's the most popular vendor?
-- What's the average number of games owned by all game owners?
-- Do poeple play BobsGames's games accross platforms? (Do they own games on both PC and console?)
-- When is most games sold? On sale? On release?
-- how many games have BobsGames sold that are not tied to a user?
-  ...
-
+BobsGames also have a wonderful relation to its distribution services which means that they can get the following data from them:
+  - name and address of user that own BobsGames's games
+  - information when user play BobsGames's games
+  
 ## Lets take a look at how users/customers get their games!
 
 ### scenario 1: Buy via online vendors which is also a distribution service
@@ -48,6 +36,20 @@ For GameStop to be able to sell BobsGames's games they have to have bought a gam
 ### scenario 3: Buys physical copy of the game
 
 Almost the same as scenario 2, but customer does not connect to a distribution service to access the game as it has a CD to install the game with. Hence, we do not at any point get any information about the customer.
+
+
+## Lets take a look at some questions that we might be interested in getting answers for!
+
+- How many people play our games?
+- what's the most popular game?
+- what's the most popular platform?
+- what's the most popular game category?
+- what's the most popular vendor?
+- What's the average number of games owned by all game owners?
+- Do poeple play BobsGames's games accross platforms? (Do they own games on both PC and console?)
+- When is most games sold? On sale? On release?
+- how many games have BobsGames sold that are not tied to a user?
+  ...
 
 # Database ER Diagram
 
@@ -70,6 +72,7 @@ The database is mounting sql/create_tables.sql which contain all table creation 
 - add more questions
 - add some price information
 - add some tables for storing real time information from distribution services
+- add information about distribution services fees. .e.g how much does steam take per purchase?
 
 ## Some thoughts
 
