@@ -61,6 +61,8 @@ Database is setup using docker compose. So, just run the following command to st
 
 `docker compose up`
 
+This will spin up a database called `bobsgames_database` `localhost:3306`. Username is `bobsgames_admin` and password `bobsgames`. You can find all this information in the `docker-compose.yml`
+
 dont forget to run `docker compose down` to ensure everything is cleaned up after you shut it down!
 
 The database is mounting sql/create_tables.sql which contain all table creation SQL and sql/populate_tables.sql which adds some exampel data
