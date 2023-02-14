@@ -6,10 +6,10 @@ services:
     image: mysql:8.0 # postgres:15.2
     restart: always
     environment:
-      - MYSQL_DATABASE=example_db
-      - MYSQL_USER=mysql
-      - MYSQL_PASSWORD=mysql
-      - MYSQL_ROOT_PASSWORD=mysql
+      - MYSQL_DATABASE=bobsgames_database
+      - MYSQL_USER=bobsgames_admin
+      - MYSQL_PASSWORD=bobsgames
+      - MYSQL_ROOT_PASSWORD=bobsgames
       # - POSTGRES_USER=postgres
       # - POSTGRES_PASSWORD=postgres
     ports:
