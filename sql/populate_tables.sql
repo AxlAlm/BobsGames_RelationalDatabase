@@ -18,7 +18,7 @@ INSERT INTO distribution_services (name) VALUES
 ("playstation"),
 ("epic games"),
 ("xbox"),
-("nintento");
+("nintendo");
 
 INSERT INTO vendors (name) VALUES
 ("steam store"),
